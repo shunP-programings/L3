@@ -1,0 +1,26 @@
+<p>
+  <font size = "7">つぶやき太朗</font>
+</p>
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<p>
+<% @tweets.each do |tw| %>
+  <div style = "float : left;">
+    <%= tw.messeage %>
+  </div>
+
+  <div style = "text-align:end;">
+    <time datetime="<%= tw.created_at %>">
+      <%= time_ago_in_words(tw.created_at) %>
+    </time>
+    <%= link_to '削除', "/tweets/#{tw.id}", method: :delete, data: {confirm: "本当に削除しますか？"} %>
+    <%= link_to '編集', "/tweets/#{tw.id}/edit" %>
+  </div>
+<% end %>
+</p>
+<p>
+  <%= link_to '新規ツイート', '/tweets/new'%>
+</p>

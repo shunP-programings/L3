@@ -1,0 +1,14 @@
+<% if @tweet.errors.any? %>
+  <p>
+    <font color = "red" >エラーがあります</font>
+  </p>
+<% end %>
+
+
+<%= form_for @tweet, url:{action: :update} do |f| %>
+<p><%= f.label :messeage, '今何してる？' %>
+  <%= f.text_field :messeage %>
+</p>
+
+<p><%= f.submit 'つぶやく' %></p>
+<% end %>
