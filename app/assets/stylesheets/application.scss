@@ -1,0 +1,22 @@
+@import "bootstrap";
+
+    .container{
+        display: flex;
+    }
+
+    .header{
+        text-align: center;
+    }
+    .sidebar{
+        width: 30%;
+        float: left;
+        background-color: #a8d5f7;
+    }
+    .main{
+        background-color: #c4e2f9;
+        width: 70%;
+    }
+
+    .footer{
+        text-align: center;
+    }
